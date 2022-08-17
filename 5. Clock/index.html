@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="hour">
+                <div class="hr"></div>
+            </div>
+            <div class="min">
+                <div class="mn"></div>
+            </div>
+            <div class="sec">
+                <div class="sc"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // setInterval(() => {
+    const deg = 6;
+    const hourElement = document.querySelector(".hour")
+    const minElement = document.querySelector(".min")
+    const secElement = document.querySelector(".sec")
+
+    const dates = new Date();
+    const hour = dates.getHours() * 30;
+    const min = dates.getMinutes() * deg;
+    const sec = dates.getSeconds() * deg;
+
+    hourElement.style.transform = `rotateZ(${(hour)+(min/12)}deg)`;
+    minElement.style.transform = `rotateZ(${min}deg)`;
+    secElement.style.transform = `rotateZ(${sec}deg)`;
+    // console.log(dates.getHours())
+    // })
+</script>
+
+
+</html>

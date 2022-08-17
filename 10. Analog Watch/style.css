@@ -1,0 +1,127 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2f363e;
+}
+
+.container {
+    width: 24em;
+    height: 24em;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    position: relative;
+}
+
+.container .clock {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 200px;
+    box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .clock::before {
+    position: absolute;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10px;
+    background-color: #2f363e;
+    border: 3px solid white;
+    z-index: 1000;
+}
+
+.container .clock span {
+    position: absolute;
+    inset: 20px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.container .clock span b {
+    transform: rotate(calc(-30deg * var(--i)));
+    font-size: 2em;
+    opacity: 0.25;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.clock1 {
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgb(63, 60, 60);
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.clock2 {
+    width: 180px;
+    height: 180px;
+}
+
+.clock3 {
+    width: 120px;
+    height: 120px;
+}
+
+.clock1 i {
+    /* position: absolute; */
+    width: 5px;
+    height: 50%;
+    background-color: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.44);
+    border-radius: 10px;
+    z-index: 60;
+}
+
+.clock2 i {
+    background-color: var(--clr);
+    width: 5px;
+    z-index: 80;
+    border-radius: 5s0px;
+    transform: scaleY(0.50);
+}
+
+.clock3 i {
+    background-color: var(--clr);
+    width: 6px;
+    z-index: 100;
+    transform: scaleY(0.50);
+    border-radius: 50px;
+}
+
+.clock1::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    top: -5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}

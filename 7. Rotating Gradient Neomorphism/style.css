@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: rgb(229, 226, 226);
+}
+
+.box {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 1), inset 5px 5px 15px rgba(0, 0, 0, 0.2), inset -1px -1px 1px rgba(255, 255, 255, 1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    border-radius: 50%;
+    z-index: 10;
+    background: linear-gradient(orange, yellow, lime, skyblue);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(255, 255, 255, 1), inset 15px 15px 15px rgba(0, 0, 0, 0.2);
+    animation: anim forwards linear 300ms infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgb(229, 226, 226);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(255, 255, 255, 1), inset 15px 15px 15px rgba(0, 0, 0, 0.2), inset -15px -15px 15px rgba(255, 255, 255, 1);
+}
+
+@keyframes anim {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+/* .box:hover {
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 1);
+} */
